@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Kqsx2</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_live">Trực tiếp</string>
+    <string name="title_history">Cá nhân</string>
+    <string name="title_chat">Chém giớ</string>
+    <string name="title_play">Chơi ảo</string>
+    <string name="textkq">Kết quả sổ xố ngày:</string>
+    <string name="huongdan">Đối với lô: 1 điểm = 22000 xu (Đánh trúng ăn 80000 xu mỗi điểm)/Đối với đề: 1 điểm =1000 xu (Đánh trúng ăn 80000 xu mỗi điểm)</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="money">20000 $</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/mb"
+    android:title="Miền Bắc"
+    />
+    <item
+    android:id="@+id/tgl"
+    android:title="Gia Lai"/>
+    <item
+        android:id="@+id/tnt"
+        android:title="Ninh Thuận"/>
+    <item
+        android:id="@+id/nvl"
+        android:title="Vĩnh Long"/>
+    <item
+        android:id="@+id/nbd"
+        android:title="Bình Dương"/>
+    <item
+        android:id="@+id/ntv"
+        android:title="Trà Vinh"/>
+
+
+</menu>

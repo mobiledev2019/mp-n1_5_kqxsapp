@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Avata"
+                android:background="@drawable/vien_layout"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Tên thành viên"
+                android:background="@drawable/vien_layout"
+                android:gravity="bottom"/>
+
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Thay đổi"
+                android:id="@+id/btupdata"
+                android:background="@drawable/avata_1"
+                android:layout_marginLeft="10dp" />
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/avata_1"
+                android:layout_height="match_parent"
+                android:id="@+id/btout"
+                android:text="Đăng xuất"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lịch sử chơi"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#FF0000"/>
+        </LinearLayout>
+       <!--<LinearLayout-->
+           <!--android:layout_width="match_parent"-->
+           <!--android:layout_height="35dp">-->
+           <!--<TextView-->
+               <!--android:id="@+id/titlePoint"-->
+               <!--android:layout_width="match_parent"-->
+               <!--android:layout_height="35dp"-->
+               <!--android:layout_weight="33.3"-->
+               <!--android:text="Điểm của bạn"-->
+               <!--android:textAlignment="center" />-->
+
+           <!--<TextView-->
+               <!--android:textAlignment="center"-->
+               <!--android:id="@+id/titleType"-->
+               <!--android:layout_width="match_parent"-->
+               <!--android:layout_height="35dp"-->
+               <!--android:layout_weight="33.3"-->
+               <!--android:text="Kiểu chơi" />-->
+
+           <!--<TextView-->
+               <!--android:textAlignment="center"-->
+               <!--android:id="@+id/titleTime"-->
+               <!--android:layout_width="match_parent"-->
+               <!--android:layout_height="35dp"-->
+               <!--android:layout_weight="33.3"-->
+               <!--android:text="Thời gian" />-->
+       <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+        <ListView
+            android:id="@+id/list_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></ListView>
+        <!--</LinearLayout>-->
+    </LinearLayout>
+
+</FrameLayout>
