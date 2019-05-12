@@ -13,6 +13,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 
 import com.example.kqsx2.Model.Guess;
+import com.example.kqsx2.Model.HistoryPlay;
 import com.example.kqsx2.Model.ResultB;
 import com.example.kqsx2.Model.User;
 import com.google.gson.Gson;
@@ -34,6 +35,9 @@ public interface ApiInterface {
     @POST("api/authenticate")
     Call<String> getToken(@Body User user);
 
+    @GET("api/getGuess")
+    Call<HistoryPlay> getGuess();
+
     class Factory {
 
         public static Retrofit getRetrofit(String url, final String token) {
@@ -48,7 +52,7 @@ public interface ApiInterface {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request newRequest  = chain.request().newBuilder()
-                            .addHeader("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NTkzMzUwNX0.KT4l9sxYAZiqPSEIS2QRdhm9-CL3AsBYYNK9A3r2PG7M6ZpVkYuZ-LRRrPDfqg4nKA0jxLIxBmfykmNOjwVdaQ")
+                            .addHeader("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjAwMzY5NX0.zsjWSUL7lQl6mlzKNUcE7Lp8xuZFVN2pB-RsmsKvb7mZmfHcaug-zyPnkNbAv9LRjhrqx7DqVf8ENfh9wjExsw")
                             .build();
                     return chain.proceed(newRequest);
                 }

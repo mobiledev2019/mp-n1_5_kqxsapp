@@ -61,42 +61,42 @@
                 android:textSize="20dp"
                 android:textColor="#FF0000"/>
         </LinearLayout>
-       <!--<LinearLayout-->
-           <!--android:layout_width="match_parent"-->
-           <!--android:layout_height="35dp">-->
-           <!--<TextView-->
-               <!--android:id="@+id/titlePoint"-->
-               <!--android:layout_width="match_parent"-->
-               <!--android:layout_height="35dp"-->
-               <!--android:layout_weight="33.3"-->
-               <!--android:text="Điểm của bạn"-->
-               <!--android:textAlignment="center" />-->
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="35dp">
+           <TextView
+               android:id="@+id/titlePoint"
+               android:layout_width="match_parent"
+               android:layout_height="35dp"
+               android:layout_weight="33.3"
+               android:text="Điểm của bạn"
+               android:textAlignment="center" />
 
-           <!--<TextView-->
-               <!--android:textAlignment="center"-->
-               <!--android:id="@+id/titleType"-->
-               <!--android:layout_width="match_parent"-->
-               <!--android:layout_height="35dp"-->
-               <!--android:layout_weight="33.3"-->
-               <!--android:text="Kiểu chơi" />-->
+           <TextView
+               android:textAlignment="center"
+               android:id="@+id/titleType"
+               android:layout_width="match_parent"
+               android:layout_height="35dp"
+               android:layout_weight="33.3"
+               android:text="Kiểu chơi" />
 
-           <!--<TextView-->
-               <!--android:textAlignment="center"-->
-               <!--android:id="@+id/titleTime"-->
-               <!--android:layout_width="match_parent"-->
-               <!--android:layout_height="35dp"-->
-               <!--android:layout_weight="33.3"-->
-               <!--android:text="Thời gian" />-->
-       <!--</LinearLayout>-->
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent">-->
+           <TextView
+               android:textAlignment="center"
+               android:id="@+id/titleTime"
+               android:layout_width="match_parent"
+               android:layout_height="35dp"
+               android:layout_weight="33.3"
+               android:text="Thời gian" />
+       </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <ListView
             android:id="@+id/list_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             ></ListView>
-        <!--</LinearLayout>-->
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

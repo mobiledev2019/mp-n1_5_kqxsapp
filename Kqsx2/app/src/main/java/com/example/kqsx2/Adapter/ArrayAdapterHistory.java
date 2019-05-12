@@ -27,10 +27,12 @@ public class ArrayAdapterHistory extends ArrayAdapter<HistoryPlay> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        String strPoint = getItem(position).getPoint();
-        String strType = getItem(position).getType();
-        String strTime = getItem(position).getTime();
-        HistoryPlay history = new HistoryPlay(strPoint,strType, strTime);
+        String strPoint = getItem(position).getNumber_guess();
+        Long strType = getItem(position).getType_guess();
+        String strTime = getItem(position).getTime_guess();
+        Long strRegion = getItem(position).getRegion();
+        HistoryPlay history = new HistoryPlay(strPoint, strRegion,strType,strTime);
+        System.out.println("point "+ strPoint);
         LayoutInflater inflater = LayoutInflater.from(context);
         convertView = inflater.inflate(resource,parent,false);
         point = (TextView) convertView.findViewById(R.id.point);
@@ -39,7 +41,7 @@ public class ArrayAdapterHistory extends ArrayAdapter<HistoryPlay> {
 
         //
         point.setText(strPoint);
-        type.setText(strType);
+        type.setText(""+strType);
         time.setText(strTime);
         return convertView;
     }

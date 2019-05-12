@@ -38,9 +38,11 @@ public class ChatLoginFragment extends Fragment {
         username = (EditText) view.findViewById(R.id.username);
         password = (EditText) view.findViewById(R.id.password);
         btlogin=(Button)view.findViewById(R.id.loginchat);
+
         btlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 User user = new User(username.getText().toString(), password.getText().toString());
                 UserRepository.getInstance().getLoginUser(user, new OnResponseListener<String>() {
                     @Override
@@ -48,6 +50,8 @@ public class ChatLoginFragment extends Fragment {
                         ApiClient.getInstance().setToken(data);
                         SharedPrefsUtil.getInstance().put("TOKEN",data);
                         System.out.println("token " + data);
+//                        Intent intent=new Intent(getActivity(),ChatActivity.class);
+//                        startActivity(intent);
                     }
 
                     @Override
@@ -61,10 +65,10 @@ public class ChatLoginFragment extends Fragment {
                         }
                     }
                 });
-//                Intent intent=new Intent(getActivity(),ChatActivity.class);
-//                startActivity(intent);
+
             }
         });
+
         return view;
 
     }
