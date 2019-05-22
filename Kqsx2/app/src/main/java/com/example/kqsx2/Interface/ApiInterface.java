@@ -1,5 +1,8 @@
 package com.example.kqsx2.Interface;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +17,7 @@ import retrofit2.http.GET;
 
 import com.example.kqsx2.Model.Guess;
 import com.example.kqsx2.Model.HistoryPlay;
+import com.example.kqsx2.Model.JWTToken;
 import com.example.kqsx2.Model.ResultB;
 import com.example.kqsx2.Model.User;
 import com.google.gson.Gson;
@@ -33,7 +37,7 @@ public interface ApiInterface {
     Call<Void> createGuess(@Body Guess guess);
 
     @POST("api/authenticate")
-    Call<String> getToken(@Body User user);
+    Call<JWTToken> getToken(@Body User user);
 
     @GET("api/getGuess")
     Call<HistoryPlay> getGuess();
@@ -44,15 +48,12 @@ public interface ApiInterface {
             //add logging
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-//            OkHttpClient Okclient = new OkHttpClient.Builder()
-//                    .addInterceptor(logging)
-//                    .build();
 
             OkHttpClient Okclient = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request newRequest  = chain.request().newBuilder()
-                            .addHeader("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjAwMzY5NX0.zsjWSUL7lQl6mlzKNUcE7Lp8xuZFVN2pB-RsmsKvb7mZmfHcaug-zyPnkNbAv9LRjhrqx7DqVf8ENfh9wjExsw")
+                            .addHeader("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1ODYyMjkyOH0.f0V-wN78uLfycRT8U4_xwOxRspSYNtPIL9eQjW3aTXvKbQqgE8Jq2Si01IGf2CTQ-oImV9_kEc6rjWoelYe7JQ")
                             .build();
                     return chain.proceed(newRequest);
                 }

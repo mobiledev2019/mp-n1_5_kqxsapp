@@ -7,11 +7,11 @@ public class JWTToken {
         this.idToken = idToken;
     }
 
-    String getIdToken() {
+    public String getIdToken() {
         return idToken;
     }
 
-    void setIdToken(String idToken) {
+    public void setIdToken(String idToken) {
         this.idToken = idToken;
     }
 }

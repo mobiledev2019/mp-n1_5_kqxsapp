@@ -34,43 +34,8 @@ public class ChatLoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_chat_login, container, false);
-        username = (EditText) view.findViewById(R.id.username);
-        password = (EditText) view.findViewById(R.id.password);
-        btlogin=(Button)view.findViewById(R.id.loginchat);
-
-        btlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                User user = new User(username.getText().toString(), password.getText().toString());
-                UserRepository.getInstance().getLoginUser(user, new OnResponseListener<String>() {
-                    @Override
-                    public void onSuccess(String data) {
-                        ApiClient.getInstance().setToken(data);
-                        SharedPrefsUtil.getInstance().put("TOKEN",data);
-                        System.out.println("token " + data);
-//                        Intent intent=new Intent(getActivity(),ChatActivity.class);
-//                        startActivity(intent);
-                    }
-
-                    @Override
-                    public void onFailure(ErrorMessage errorMessage) {
-                        String errMsg = "Error Unknown";
-                        if (errorMessage != null) {
-                            errMsg = errorMessage.getTitle();
-                            if (errorMessage.getStatus() == 428) {
-//                                showThankRegistration();
-                            }
-                        }
-                    }
-                });
-
-            }
-        });
-
+        View view= inflater.inflate(R.layout.fragment_chat, container, false);
         return view;
-
     }
 
 }

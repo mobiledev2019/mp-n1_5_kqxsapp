@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import com.example.kqsx2.API.ApiClient;
 import com.example.kqsx2.API.OnResponseListener;
 import com.example.kqsx2.Model.ErrorMessage;
+import com.example.kqsx2.Model.JWTToken;
 import com.example.kqsx2.Model.User;
 
 import retrofit2.Call;
@@ -25,12 +26,12 @@ public class UserRepository {
         }
         return sInstance;
     }
-    public void getLoginUser(@NonNull @Body User user, @NonNull final OnResponseListener<String> listener) {
+    public void getLoginUser(@NonNull @Body User user, @NonNull final OnResponseListener<JWTToken> listener) {
 
-        Call<String> call = ApiClient.getInstance().getApiInterface().getToken(user);
-        call.enqueue(new Callback<String>() {
+        Call<JWTToken> call = ApiClient.getInstance().getApiInterface().getToken(user);
+        call.enqueue(new Callback<JWTToken>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<JWTToken> call, Response<JWTToken> response) {
                 if (response.code() == 200 && response.body() != null)
                     listener.onSuccess(response.body());
                 else if (response.code() == 401) {
@@ -45,7 +46,7 @@ public class UserRepository {
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<JWTToken> call, Throwable t) {
                 listener.onFailure(new ErrorMessage());
 
             }

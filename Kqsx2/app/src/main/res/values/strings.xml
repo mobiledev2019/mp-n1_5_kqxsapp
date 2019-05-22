@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Kqsx2</string>
-    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_activity_bottom">Kết quả xổ số</string>
     <string name="title_live">Trực tiếp</string>
     <string name="title_history">Cá nhân</string>
     <string name="title_chat">Chém giớ</string>
