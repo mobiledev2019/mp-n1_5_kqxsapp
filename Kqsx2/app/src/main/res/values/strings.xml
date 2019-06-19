@@ -11,4 +11,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="money">20000 $</string>
+    <string name="edit">edit</string>
+    <string name="profile">profile</string>
+    <string name="date_of_birth">dd/mm/yyyy</string>
+    <string name="sex_1">sex</string>
 </resources>

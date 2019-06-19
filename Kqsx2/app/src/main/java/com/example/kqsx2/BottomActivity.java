@@ -7,16 +7,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentContainer;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import com.example.kqsx2.Utils.AppSharedPref;
 
 public class BottomActivity extends AppCompatActivity {
     private BottomNavigationView navigation;
     private FrameLayout frameLayout;
     private LiveFragment liveFragment;
     private HistoryFragment historyFragment;
-    private ChatLoginFragment chatLoginFragment;
+    private ChatFragment chatFragment;
     private PlayFragment playFragment;
 
     @Override
@@ -24,10 +27,11 @@ public class BottomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom);
         navigation= (BottomNavigationView) findViewById(R.id.navigation);
-
+        String token = AppSharedPref.getInstance(BottomActivity.this).getName("key");
+        Log.d("DDDDDDDDDDDD", "onCreate: " + token);
         liveFragment = new LiveFragment();
         historyFragment=new HistoryFragment();
-        chatLoginFragment=new ChatLoginFragment();
+        chatFragment=new ChatFragment();
         playFragment=new PlayFragment();
         loadfrag(liveFragment);
 
@@ -42,7 +46,7 @@ public class BottomActivity extends AppCompatActivity {
                         loadfrag(historyFragment);
                         return true;
                     case R.id.navigation_chat:
-                        loadfrag(chatLoginFragment);
+                        loadfrag(chatFragment);
                         return true;
                     case R.id.navigation_play:
                         loadfrag(playFragment);

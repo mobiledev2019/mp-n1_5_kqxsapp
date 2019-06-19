@@ -9,6 +9,9 @@ public class App extends Application {
     private Gson mGSon;
 
     public static App self() {
+        if(mSelf == null) {
+            mSelf = new App();
+        }
         return mSelf;
     }
 

@@ -71,13 +71,6 @@ public class LiveBFragment extends Fragment {
                 System.out.println("error: "+ errorMessage.getTitle());
             }
         });
-
-//        listKq.add(new KetQua("giai dac biet",stringList,1));
-//        listKq.add(new KetQua("giai dac biet",stringList,2));
-//        listKq.add(new KetQua("giai dac biet",stringList,3));
-//        listKq.add(new KetQua("giai dac biet",stringList,4));
-
-
         return view;
     }
 

@@ -1,17 +1,17 @@
 package com.example.kqsx2.Model;
 
 public class JWTToken {
-    private String idToken;
+    private String id_token;
 
-    JWTToken(String idToken) {
-        this.idToken = idToken;
+    public String getId_token() {
+        return id_token;
     }
 
-    public String getIdToken() {
-        return idToken;
+    public void setId_token(String id_token) {
+        this.id_token = id_token;
     }
 
-    public void setIdToken(String idToken) {
-        this.idToken = idToken;
+    public JWTToken(String id_token) {
+        this.id_token = id_token;
     }
 }

@@ -20,6 +20,7 @@ import com.example.kqsx2.Model.HistoryPlay;
 import com.example.kqsx2.Model.JWTToken;
 import com.example.kqsx2.Model.ResultB;
 import com.example.kqsx2.Model.User;
+import com.example.kqsx2.Utils.SharedPrefsUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -48,12 +49,12 @@ public interface ApiInterface {
             //add logging
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-
+            String tokenstr = SharedPrefsUtil.getInstance().get("key", String.class);
             OkHttpClient Okclient = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request newRequest  = chain.request().newBuilder()
-                            .addHeader("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1ODYyMjkyOH0.f0V-wN78uLfycRT8U4_xwOxRspSYNtPIL9eQjW3aTXvKbQqgE8Jq2Si01IGf2CTQ-oImV9_kEc6rjWoelYe7JQ")
+                            .addHeader("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU2MDg3MTU0N30.GfJikhsS5voHpC23aVLCtD9_2QTtLUENqemres0gTVbjgzlC5LJKmztQHouigjLLyF20TgOVwvaWXCnmHn28Tw")
                             .build();
                     return chain.proceed(newRequest);
                 }

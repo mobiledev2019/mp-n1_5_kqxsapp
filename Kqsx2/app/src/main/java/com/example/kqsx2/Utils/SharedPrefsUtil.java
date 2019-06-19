@@ -2,8 +2,7 @@ package com.example.kqsx2.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
-import com.example.kqsx2.Utils.App;
+import android.util.Log;
 
 public class SharedPrefsUtil {
 
@@ -20,6 +19,11 @@ public class SharedPrefsUtil {
             mInstance = new SharedPrefsUtil();
         }
         return mInstance;
+    }
+
+    public static String getLanguageDevice(Context context, String key, String nameSharedPrefent) {
+        SharedPreferences sharedPref = context.getSharedPreferences(nameSharedPrefent, Context.MODE_PRIVATE);
+        return sharedPref.getString(key, "");
     }
 
 
@@ -82,4 +86,3 @@ public class SharedPrefsUtil {
         mSharedPreferences.edit().clear().apply();
     }
 }
-
