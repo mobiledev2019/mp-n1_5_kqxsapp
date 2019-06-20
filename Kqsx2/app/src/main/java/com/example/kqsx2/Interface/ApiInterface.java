@@ -20,6 +20,7 @@ import com.example.kqsx2.Model.HistoryPlay;
 import com.example.kqsx2.Model.JWTToken;
 import com.example.kqsx2.Model.ResultB;
 import com.example.kqsx2.Model.User;
+import com.example.kqsx2.Model.UserExtra;
 import com.example.kqsx2.Utils.SharedPrefsUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -42,6 +43,9 @@ public interface ApiInterface {
 
     @GET("api/getGuess")
     Call<HistoryPlay> getGuess();
+
+    @GET("api/user-extra")
+    Call<UserExtra> getUserExtra(@Query("userExtraId") Long userExtraId);
 
     class Factory {
 

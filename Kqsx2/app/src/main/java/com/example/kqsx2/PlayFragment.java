@@ -1,6 +1,7 @@
 package com.example.kqsx2;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ public class PlayFragment extends Fragment {
     public PlayFragment() {
         // Required empty public constructor
     }
-    private Button btkhuvuc,btnPlay;
+    private Button btkhuvuc,btnPlay,btnprofile;
     private EditText sdd,sdiem;
 
     @Override
@@ -39,6 +40,7 @@ public class PlayFragment extends Fragment {
         btnPlay = (Button) view.findViewById(R.id.btplay);
         final Button bthtplay=(Button)view.findViewById(R.id.bthtplay);
         bthtplay.setText("Chọn hình thức chơi");
+        btnprofile = (Button) view.findViewById(R.id.btnprofile);
         //
         sdd = (EditText) view.findViewById(R.id.sdd);
         sdiem = (EditText) view.findViewById(R.id.sdiem);
@@ -122,7 +124,13 @@ public class PlayFragment extends Fragment {
                 });
             }
         });
-
+        btnprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), ProfileFragment.class);
+                startActivity(intent);
+            }
+        });
          return view;
     }
 
