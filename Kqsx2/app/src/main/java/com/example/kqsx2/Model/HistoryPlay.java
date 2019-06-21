@@ -1,19 +1,19 @@
 package com.example.kqsx2.Model;
 
 public class HistoryPlay {
+    private Long id;
     private String number_guess;
     private Long region;
     private Long type_guess;
     private String time_guess;
+    private Long point_guess;
 
-    public HistoryPlay(String number_guess, Long region, Long type_guess, String time_guess) {
-        this.number_guess = number_guess;
-        this.region = region;
-        this.type_guess = type_guess;
-        this.time_guess = time_guess;
+    public Long getId() {
+        return id;
     }
 
-    public HistoryPlay() {
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNumber_guess() {
@@ -46,5 +46,13 @@ public class HistoryPlay {
 
     public void setTime_guess(String time_guess) {
         this.time_guess = time_guess;
+    }
+
+    public Long getPoint_guess() {
+        return point_guess;
+    }
+
+    public void setPoint_guess(Long point_guess) {
+        this.point_guess = point_guess;
     }
 }

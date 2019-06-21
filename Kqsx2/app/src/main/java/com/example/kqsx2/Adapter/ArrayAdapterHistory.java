@@ -15,7 +15,7 @@ import com.example.kqsx2.R;
 import java.util.ArrayList;
 
 public class ArrayAdapterHistory extends ArrayAdapter<HistoryPlay> {
-    private TextView point,type,time;
+    private TextView point,type,time,number;
     private Context context;
     int resource;
     public ArrayAdapterHistory(@NonNull Context context, int resource, ArrayList<HistoryPlay> listPlay) {
@@ -27,22 +27,24 @@ public class ArrayAdapterHistory extends ArrayAdapter<HistoryPlay> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        String strPoint = getItem(position).getNumber_guess();
+        Long strPoint = getItem(position).getPoint_guess();
         Long strType = getItem(position).getType_guess();
         String strTime = getItem(position).getTime_guess();
         Long strRegion = getItem(position).getRegion();
-        HistoryPlay history = new HistoryPlay(strPoint, strRegion,strType,strTime);
+        String numberGuess = getItem(position).getNumber_guess();
         System.out.println("point "+ strPoint);
         LayoutInflater inflater = LayoutInflater.from(context);
         convertView = inflater.inflate(resource,parent,false);
         point = (TextView) convertView.findViewById(R.id.point);
         type = (TextView) convertView.findViewById(R.id.type);
         time = (TextView) convertView.findViewById(R.id.time);
-
+        number = (TextView) convertView.findViewById(R.id.number);
         //
-        point.setText(strPoint);
-        type.setText(""+strType);
+        String typeGuess = strType == 1L ? "Lô" : "Đề";
+        point.setText(" "+ strPoint);
+        type.setText(typeGuess);
         time.setText(strTime);
+        number.setText(numberGuess);
         return convertView;
     }
 }

@@ -1,10 +1,14 @@
 package com.example.kqsx2.Respository;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.example.kqsx2.API.ApiClient;
 import com.example.kqsx2.API.OnResponseListener;
+import com.example.kqsx2.Model.ErrorMessage;
 import com.example.kqsx2.Model.HistoryPlay;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,27 +27,22 @@ public class HistoryPlayRepository {
         }
         return sInstance;
     }
-    public void getGuess(@NonNull final OnResponseListener<HistoryPlay> listener) {
-        Call<HistoryPlay> call = ApiClient.getInstance().getApiInterface().getGuess();
-        call.enqueue(new Callback<HistoryPlay>() {
+    public void getGuess(@NonNull final OnResponseListener<List<HistoryPlay>> listener) {
+        Call<List<HistoryPlay>> call = ApiClient.getInstance().getApiInterface().getGuess();
+        call.enqueue(new Callback<List<HistoryPlay>>() {
             @Override
-            public void onResponse(Call<HistoryPlay> call, Response<HistoryPlay> response) {
-                if (response == null) {
-                    listener.onFailure(null);
-                    return;
-                }
-                if (!response.isSuccessful()) {
-//                    ErrorMessage errorMessage = ErrorUtils.parseError(response);
-//                    listener.onFailure(errorMessage);
-                    return;
-                }
+            public void onResponse(Call<List<HistoryPlay>> call, Response<List<HistoryPlay>> response) {
+                if (response.code() == 200 && response.body() != null) {
+                    listener.onSuccess(response.body());
 
-                listener.onSuccess(response.body());
+                } else if (response == null) {
+                    listener.onFailure(new ErrorMessage(response.errorBody().toString()));
+                }
             }
 
             @Override
-            public void onFailure(Call<HistoryPlay> call, Throwable t) {
-                listener.onFailure(null);
+            public void onFailure(Call<List<HistoryPlay>> call, Throwable t) {
+                Log.d("Error", t.getMessage());
             }
         });
     }

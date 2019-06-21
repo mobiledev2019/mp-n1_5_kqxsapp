@@ -4,6 +4,7 @@ package com.example.kqsx2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +17,11 @@ import com.example.kqsx2.API.OnResponseListener;
 import com.example.kqsx2.Model.ErrorMessage;
 import com.example.kqsx2.Model.Guess;
 import com.example.kqsx2.Respository.Guessrepository;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 
 /**
@@ -59,21 +65,23 @@ public class PlayFragment extends Fragment {
                                 btkhuvuc.setText("Miền Bắc");
                                 guess.setRegion(1L);
                                 return true;
-                            case R.id.tgl:
-                                btkhuvuc.setText("Gia Lai");
+                            case R.id.mn:
+                                btkhuvuc.setText("Miền Nam");
+                                guess.setRegion(3L);
                                 return true;
-                            case R.id.tnt:
-                                btkhuvuc.setText("Ninh Thuận");
+                            case R.id.mt:
+                                btkhuvuc.setText("Miền Trung");
+                                guess.setRegion(2L);
                                 return true;
-                            case R.id.nvl:
-                                btkhuvuc.setText("Vĩnh Long");
-                                return true;
-                            case R.id.ntv:
-                                btkhuvuc.setText("Trà Vinh");
-                                return true;
-                            case R.id.nbd:
-                                btkhuvuc.setText("Bình Dương");
-                                return true;
+//                            case R.id.nvl:
+//                                btkhuvuc.setText("Vĩnh Long");
+//                                return true;
+//                            case R.id.ntv:
+//                                btkhuvuc.setText("Trà Vinh");
+//                                return true;
+//                            case R.id.nbd:
+//                                btkhuvuc.setText("Bình Dương");
+//                                return true;
                         }
                         return false;
                     }
@@ -106,6 +114,8 @@ public class PlayFragment extends Fragment {
                 menuhtplay.show();
             }
         });
+        String currentDate = getCurrentDate();
+        guess.setTime_guess(currentDate);
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,11 +137,22 @@ public class PlayFragment extends Fragment {
         btnprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), ProfileFragment.class);
-                startActivity(intent);
+                ProfileFragment profileFragment = new ProfileFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                // Replace whatever is in the fragment_container view with this fragment,
+                // and add the transaction to the back stack so the user can navigate back
+                transaction.replace(R.id.container, profileFragment);
+                transaction.addToBackStack(null);
+                // Commit the transaction
+                transaction.commit();
             }
         });
          return view;
     }
-
+    public static String getCurrentDate() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        Date today = Calendar.getInstance().getTime();
+        return dateFormat.format(today);
+    }
 }

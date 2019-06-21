@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
@@ -42,7 +43,7 @@ public interface ApiInterface {
     Call<JWTToken> getToken(@Body User user);
 
     @GET("api/getGuess")
-    Call<HistoryPlay> getGuess();
+    Call<List<HistoryPlay>> getGuess();
 
     @GET("api/user-extra")
     Call<UserExtra> getUserExtra(@Query("userExtraId") Long userExtraId);
@@ -53,12 +54,12 @@ public interface ApiInterface {
             //add logging
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-            String tokenstr = SharedPrefsUtil.getInstance().get("key", String.class);
+            final String tokenstr = SharedPrefsUtil.getInstance().get("key", String.class);
             OkHttpClient Okclient = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request newRequest  = chain.request().newBuilder()
-                            .addHeader("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU2MDg3MTU0N30.GfJikhsS5voHpC23aVLCtD9_2QTtLUENqemres0gTVbjgzlC5LJKmztQHouigjLLyF20TgOVwvaWXCnmHn28Tw")
+                            .addHeader("Authorization", tokenstr)
                             .build();
                     return chain.proceed(newRequest);
                 }

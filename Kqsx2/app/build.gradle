@@ -44,7 +44,6 @@ dependencies {
     // Firebase Messaging library for sending push notifications. Add this line.
     implementation 'com.google.android.gms:play-services-flags:16.0.1'
    // implementation 'com.google.android.gms:play-services-basement:16.0.1'
-    //implementation 'com.google.firebase:firebase-auth:16.0.5'
     /*implementation ("com.google.firebase:firebase-messaging:17.3.4"){
         exclude group: 'com.google.firebase', module: 'firebase-iid'
     }*/

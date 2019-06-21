@@ -23,7 +23,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class HistoryFragment extends Fragment {
-
+private ArrayList<HistoryPlay> listHistory;
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -38,15 +38,17 @@ public class HistoryFragment extends Fragment {
         final ListView listView = (ListView) view.findViewById(R.id.list_history);
 //        HistoryPlay historyPlay = new HistoryPlay("ab","c","22");
         final HistoryPlay historyPlay = new HistoryPlay();
-        HistoryPlayRepository.getInstance().getGuess(new OnResponseListener<HistoryPlay>() {
+        listHistory = new ArrayList<HistoryPlay>();
+        HistoryPlayRepository.getInstance().getGuess(new OnResponseListener<List<HistoryPlay>>() {
             @Override
-            public void onSuccess(HistoryPlay data) {
-                historyPlay.setNumber_guess(data.getNumber_guess());
-                historyPlay.setRegion(data.getRegion());
-                historyPlay.setTime_guess(data.getTime_guess());
-                historyPlay.setType_guess(data.getType_guess());
-                ArrayList<HistoryPlay> listHistory = new ArrayList<HistoryPlay>();
-                listHistory.add(historyPlay);
+            public void onSuccess(List<HistoryPlay> data) {
+                for(int i=0;i< data.size();i++) {
+                    historyPlay.setNumber_guess(data.get(i).getNumber_guess());
+                    historyPlay.setRegion(data.get(i).getRegion());
+                    historyPlay.setTime_guess(data.get(i).getTime_guess());
+                    historyPlay.setType_guess(data.get(i).getType_guess());
+                    listHistory.add(historyPlay);
+                }
                 ArrayAdapterHistory adapter = new ArrayAdapterHistory(getContext(),R.layout.fragment_history_list, listHistory);
                 listView.setAdapter(adapter);
             }

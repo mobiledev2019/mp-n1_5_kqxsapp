@@ -11,7 +11,8 @@ public class SharedPrefsUtil {
     private SharedPreferences mSharedPreferences;
 
     public SharedPrefsUtil() {
-        mSharedPreferences = App.self().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        mSharedPreferences = App.self().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);//em lam theo con ajax trc a hoang chỉ nhưng bị sai thư viện thì fai
+        //sharepreferen này ko cần thư viện mà
     }
 
     public static SharedPrefsUtil getInstance() {

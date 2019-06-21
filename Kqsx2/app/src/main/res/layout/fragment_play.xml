@@ -13,30 +13,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tài sản hiện có"
-        android:gravity="center"/>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:id="@+id/money"
-        android:gravity="center"
-        android:text="@string/money"
-        android:textColor="#FDFCFC"
-        android:background="#FAE000"/>
-    <Button
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Thêm tiền"
-        android:textColor="#FFFCFC"
-        android:background="#078AF3"
-        android:id="@+id/btthemmn"/>
     <Button
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"

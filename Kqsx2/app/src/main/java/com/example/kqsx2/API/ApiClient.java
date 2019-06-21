@@ -13,13 +13,13 @@ import com.example.kqsx2.Utils.SharedPrefsUtil;
 import retrofit2.Retrofit;
 
 public class ApiClient{
-    public static final String BASE_URL = "http://192.168.0.101:8080";//public
+    public static final String BASE_URL = "http://192.168.0.100:8080";//public
 
     private static ApiClient apiClient;
     private ApiInterface apiInterface;
 
-//    private static String token =  "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU2MDg3MTU0N30.GfJikhsS5voHpC23aVLCtD9_2QTtLUENqemres0gTVbjgzlC5LJKmztQHouigjLLyF20TgOVwvaWXCnmHn28Tw";
-    private static String token =  SharedPrefsUtil.getInstance().get("key", String.class);
+//    private static String token =  "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU2MTE5Nzg2M30.qbw0aYKlSDC_fnID9A5clNA4jL8cz5ZpWme4HoMIGDsrSouqs6cnDgUKiXR5d7bEX4YtH08EkfYjbiPjMNu8OA";
+    private static String token =  SharedPrefsUtil.getInstance().get("key", String.class);// nó bị ở chỗ này a ạ
 
     public ApiClient() {
         apiInterface = ApiInterface.Factory.create(getRetrofit());

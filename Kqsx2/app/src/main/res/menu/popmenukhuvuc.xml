@@ -5,20 +5,12 @@
     android:title="Miền Bắc"
     />
     <item
-    android:id="@+id/tgl"
-    android:title="Gia Lai"/>
+        android:id="@+id/mn"
+        android:title="Miền Nam"
+        />
     <item
-        android:id="@+id/tnt"
-        android:title="Ninh Thuận"/>
-    <item
-        android:id="@+id/nvl"
-        android:title="Vĩnh Long"/>
-    <item
-        android:id="@+id/nbd"
-        android:title="Bình Dương"/>
-    <item
-        android:id="@+id/ntv"
-        android:title="Trà Vinh"/>
-
+        android:id="@+id/mt"
+        android:title="Miền Trung"
+        />
 
 </menu>

@@ -63,7 +63,7 @@ public class LoginHomeActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(JWTToken data) {
                         ApiClient.getInstance().setToken(data.getId_token());
-                        Log.d("AAAAAAAAAAAAA", "onSuccess: " + AppSharedPref.getInstance(LoginHomeActivity.this));
+//                        Log.d("AAAAAAAAAAAAA", "onSuccess: " + AppSharedPref.getInstance(LoginHomeActivity.this));
 
                         SharedPrefsUtil.getInstance().put("key", "Bearer "+data.getId_token());
 //                        AppSharedPref.getInstance(LoginHomeActivity.this).setName("key", "Bearer "+data.getId_token());

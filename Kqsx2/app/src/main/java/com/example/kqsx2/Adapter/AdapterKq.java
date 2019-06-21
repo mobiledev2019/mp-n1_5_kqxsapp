@@ -48,52 +48,105 @@ public class AdapterKq extends RecyclerView.Adapter<AdapterKq.kqViewHolder> {
                 holder.txt6.setVisibility(View.GONE);
                 break;
             case 2:
-                holder.txt1.setText(ketQua.getStringList().get(0));
-                holder.txt2.setText(ketQua.getStringList().get(1));
-                holder.txt3.setVisibility(View.GONE);
-                holder.txt4.setVisibility(View.GONE);
-                holder.txt5.setVisibility(View.GONE);
-                holder.txt6.setVisibility(View.GONE);
+                List<TextView> textViews2 = new ArrayList<>();
+                textViews2.add(holder.txt1);
+                textViews2.add(holder.txt2);
+                for (int i = 0;i<ketQua.getStringList().size();i++) {
+                    textViews2.get(i).setText(ketQua.getStringList().get(i));
+                }
+//                holder.txt1.setText(ketQua.getStringList().get(0));
+//                holder.txt2.setText(ketQua.getStringList().get(1));
+//                holder.txt3.setVisibility(View.GONE);
+//                holder.txt4.setVisibility(View.GONE);
+//                holder.txt5.setVisibility(View.GONE);
+//                holder.txt6.setVisibility(View.GONE);
                 break;
             case 3:
-                holder.txt1.setText(ketQua.getStringList().get(0));
-                holder.txt2.setText(ketQua.getStringList().get(1));
-                holder.txt3.setText(ketQua.getStringList().get(2));
-                holder.txt4.setText(ketQua.getStringList().get(3));
-                holder.txt5.setText(ketQua.getStringList().get(4));
-                holder.txt6.setText(ketQua.getStringList().get(5));
+                List<TextView> textViews3 = new ArrayList<>();
+                textViews3.add(holder.txt1);
+                textViews3.add(holder.txt2);
+                textViews3.add(holder.txt3);
+                textViews3.add(holder.txt4);
+                textViews3.add(holder.txt5);
+                textViews3.add(holder.txt6);
+
+                for (int i = 0;i<ketQua.getStringList().size();i++) {
+                    textViews3.get(i).setText(ketQua.getStringList().get(i));
+                }
+//                holder.txt1.setText(ketQua.getStringList().get(0) != null ? ketQua.getStringList().get(0): "");
+//                holder.txt2.setText(ketQua.getStringList().get(1)!= null ? ketQua.getStringList().get(1): "");
+//                holder.txt3.setText(ketQua.getStringList().get(2)!= null ? ketQua.getStringList().get(2): "");
+//                holder.txt4.setText(ketQua.getStringList().get(3)!= null ? ketQua.getStringList().get(3): "");
+//                holder.txt5.setText(ketQua.getStringList().get(4)!= null ? ketQua.getStringList().get(4): "");
+//                holder.txt6.setText(ketQua.getStringList().get(5)!= null ? ketQua.getStringList().get(5): "");
                 break;
             case 4:
-                holder.txt1.setText(ketQua.getStringList().get(0));
-                holder.txt2.setText(ketQua.getStringList().get(1));
-                holder.txt3.setText(ketQua.getStringList().get(2));
-                holder.txt4.setText(ketQua.getStringList().get(3));
-                holder.txt5.setVisibility(View.GONE);
-                holder.txt6.setVisibility(View.GONE);
+                List<TextView> textViews4 = new ArrayList<>();
+                textViews4.add(holder.txt1);
+                textViews4.add(holder.txt2);
+                textViews4.add(holder.txt3);
+                textViews4.add(holder.txt4);
+                for (int i = 0;i<ketQua.getStringList().size();i++) {
+                    textViews4.get(i).setText(ketQua.getStringList().get(i));
+                }
+//                holder.txt1.setText(ketQua.getStringList().get(0));
+//                holder.txt2.setText(ketQua.getStringList().get(1));
+//                holder.txt3.setText(ketQua.getStringList().get(2));
+//                holder.txt4.setText(ketQua.getStringList().get(3));
+//                holder.txt5.setVisibility(View.GONE);
+//                holder.txt6.setVisibility(View.GONE);
                 break;
             case 5:
-                holder.txt1.setText(ketQua.getStringList().get(0));
-                holder.txt2.setText(ketQua.getStringList().get(1));
-                holder.txt3.setText(ketQua.getStringList().get(2));
-                holder.txt4.setText(ketQua.getStringList().get(3));
-                holder.txt5.setText(ketQua.getStringList().get(4));
-                holder.txt6.setText(ketQua.getStringList().get(5));
+                List<TextView> textViews5 = new ArrayList<>();
+                textViews5.add(holder.txt1);
+                textViews5.add(holder.txt2);
+                textViews5.add(holder.txt3);
+                textViews5.add(holder.txt4);
+                textViews5.add(holder.txt5);
+                textViews5.add(holder.txt6);
+
+                for (int i = 0;i<ketQua.getStringList().size();i++) {
+                    textViews5.get(i).setText(ketQua.getStringList().get(i));
+                }
+//                holder.txt1.setText(ketQua.getStringList().get(0));
+//                holder.txt2.setText(ketQua.getStringList().get(1));
+//                holder.txt3.setText(ketQua.getStringList().get(2));
+//                holder.txt4.setText(ketQua.getStringList().get(3));
+//                holder.txt5.setText(ketQua.getStringList().get(4));
+//                holder.txt6.setText(ketQua.getStringList().get(5));
                 break;
             case 6:
-                holder.txt1.setText(ketQua.getStringList().get(0));
-                holder.txt2.setText(ketQua.getStringList().get(1));
-                holder.txt3.setText(ketQua.getStringList().get(2));
-                holder.txt4.setVisibility(View.GONE);
-                holder.txt5.setVisibility(View.GONE);
-                holder.txt6.setVisibility(View.GONE);
+                List<TextView> textViews6 = new ArrayList<>();
+                textViews6.add(holder.txt1);
+                textViews6.add(holder.txt2);
+                textViews6.add(holder.txt3);
+
+                for (int i = 0;i<ketQua.getStringList().size();i++) {
+                    textViews6.get(i).setText(ketQua.getStringList().get(i));
+                }
+//                holder.txt1.setText(ketQua.getStringList().get(0));
+//                holder.txt2.setText(ketQua.getStringList().get(1));
+//                holder.txt3.setText(ketQua.getStringList().get(2));
+//                holder.txt4.setVisibility(View.GONE);
+//                holder.txt5.setVisibility(View.GONE);
+//                holder.txt6.setVisibility(View.GONE);
                 break;
             case 7:
-                holder.txt1.setText(ketQua.getStringList().get(0));
-                holder.txt2.setText(ketQua.getStringList().get(1));
-                holder.txt3.setText(ketQua.getStringList().get(2));
-                holder.txt4.setText(ketQua.getStringList().get(3));
-                holder.txt5.setVisibility(View.GONE);
-                holder.txt6.setVisibility(View.GONE);
+                List<TextView> textViews7 = new ArrayList<>();
+                textViews7.add(holder.txt1);
+                textViews7.add(holder.txt2);
+                textViews7.add(holder.txt3);
+                textViews7.add(holder.txt4);
+
+                for (int i = 0;i<ketQua.getStringList().size();i++) {
+                    textViews7.get(i).setText(ketQua.getStringList().get(i));
+                }
+//                holder.txt1.setText(ketQua.getStringList().get(0));
+//                holder.txt2.setText(ketQua.getStringList().get(1));
+//                holder.txt3.setText(ketQua.getStringList().get(2));
+//                holder.txt4.setText(ketQua.getStringList().get(3));
+//                holder.txt5.setVisibility(View.GONE);
+//                holder.txt6.setVisibility(View.GONE);
                 break;
         }
         holder.txtTitle.setText(ketQua.getGiai());
